@@ -4,9 +4,16 @@
 
 int main(int argc, char *argv[])
 {
-	int WIDTH = stoi(argv[1]);
-	int HEIGHT = stoi(argv[2]);
-	int DENSITY = stoi(argv[3]);
+	int WIDTH = 250;
+	int HEIGHT = 100;
+	int DENSITY = 1;
+	
+	if (argc > 3)
+	{
+		int WIDTH = stoi(argv[1]);
+		int HEIGHT = stoi(argv[2]);
+		int DENSITY = stoi(argv[3]);
+	}
 
 	Console* console = new Console(WIDTH, HEIGHT);
 	Map* map = new Map(WIDTH, HEIGHT);

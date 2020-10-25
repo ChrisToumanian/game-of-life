@@ -11,7 +11,7 @@ public:
 	char** cells;
 	char** new_gen;
 	char young_cell = 'o';
-	char old_cell = 'o';
+	char old_cell = 'O';
 
 	void generate();
 	void seed(int density);
