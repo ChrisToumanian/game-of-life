@@ -2,12 +2,12 @@
 #include "console.h"
 #include "map.h"
 
-#define WIDTH 200
-#define HEIGHT 50
-#define DENSITY 14
-
-int main()
+int main(int argc, char *argv[])
 {
+	int WIDTH = stoi(argv[1]);
+	int HEIGHT = stoi(argv[2]);
+	int DENSITY = stoi(argv[3]);
+
 	Console* console = new Console(WIDTH, HEIGHT);
 	Map* map = new Map(WIDTH, HEIGHT);
 	map->generate();
