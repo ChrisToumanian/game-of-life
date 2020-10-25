@@ -8,11 +8,12 @@ int main(int argc, char *argv[])
 	int HEIGHT = 100;
 	int DENSITY = 1;
 	
-	if (argc > 3)
+	if (argc == 4)
 	{
-		int WIDTH = stoi(argv[1]);
-		int HEIGHT = stoi(argv[2]);
-		int DENSITY = stoi(argv[3]);
+		std::cout << argv[1];
+		WIDTH = stoi(argv[1]);
+		HEIGHT = stoi(argv[2]);
+		DENSITY = stoi(argv[3]);
 	}
 
 	Console* console = new Console(WIDTH, HEIGHT);
