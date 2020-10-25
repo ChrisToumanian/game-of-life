@@ -1,0 +1,13 @@
+John Conway's Game of Life
+
+An infinite two-dimensional orthogonal grid of square cells, each of which has two possible states, alive or dead.
+
+Each cell interacts with its eight neighbors every generation (step in time).
+
+1) Any cell with fewer than two live neighbors dies, as if by underpopulation.
+
+2) Any cell with two or three live neighbors lives to the next generation.
+
+3) Any cell with more than three live neighbors dies, as if by overcrowding.
+
+4) Any cell with exactly three live neighbors becomes a live cell, as if by reproduction.
