@@ -6,8 +6,8 @@ int main(int argc, char *argv[])
 {
 	int WIDTH = 500;
 	int HEIGHT = 500;
-	int CONSOLE_WIDTH = 150;
-	int CONSOLE_HEIGHT = 50;
+	int CONSOLE_WIDTH = 225;
+	int CONSOLE_HEIGHT = 52;
 	int DENSITY = 1;
 	
 	if (argc == 6)
