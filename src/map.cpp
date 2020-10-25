@@ -9,7 +9,6 @@ Map::Map(int _width, int _height)
 void Map::generate()
 {
 	cells = new char*[height];
-
 	for (int i = 0; i < height; ++i)
 	{
     	cells[i] = new char[width];
