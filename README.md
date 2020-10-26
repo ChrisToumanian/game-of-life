@@ -1,5 +1,10 @@
-To run:
+Installation and running:
+$ git clone https://github.com/ChrisToumanian/game-of-life
+$ cd game-of-life/bin
 $ ./game-of-life
+
+To quit:
+Ctrl+C
 
 Options:
 $ ./game-of-life < width > < height > < console width > < console height > < density > < young cell char > < old cell char >
