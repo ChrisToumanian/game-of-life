@@ -10,7 +10,7 @@ public:
 
 	char** cells;
 	char** new_gen;
-	char young_cell = 'o';
+	char young_cell = 'O';
 	char old_cell = 'O';
 
 	void generate();
@@ -23,6 +23,7 @@ private:
 	std::random_device rd;
 
 	int getLiveNeighbors(int x, int y);
+	char getCell(int x, int y);
 };
 
 #endif

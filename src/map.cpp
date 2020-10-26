@@ -48,9 +48,9 @@ void Map::update()
     	new_gen[i] = new char[width];
 	}
 
-	for (int y = 0; y < height - 1; ++y)
+	for (int y = 0; y < height; ++y)
 	{
-		for (int x = 0; x < width - 1; ++x)
+		for (int x = 0; x < width; ++x)
 		{
 			new_gen[y][x] = ' ';
 			int neighbors = getLiveNeighbors(x, y);
@@ -88,15 +88,24 @@ int Map::getLiveNeighbors(int x, int y)
 {
 	int neighbors = 0;
 
-	// Check all eight neighboring positions if they are alive.
-	if (y > 0 && x > 0 && cells[y - 1][x - 1] != ' ') neighbors++; // upper-left
-	if (y > 0 && cells[y - 1][x] != ' ') neighbors++; // upper-center
-	if (y > 0 && x < width && cells[y - 1][x + 1] != ' ') neighbors++; // upper-right
-	if (x > 0 && cells[y][x - 1] != ' ') neighbors++; // middle-left
-	if (x < width && cells[y][x + 1] != ' ') neighbors++; // middle-right
-	if (y < height && x > 0 && cells[y + 1][x - 1] != ' ') neighbors++; // lower-left
-	if (y < height && cells[y + 1][x] != ' ') neighbors++; // lower-center
-	if (y < height && x < width && cells[y + 1][x + 1] != ' ') neighbors++; // lower-right
+	if (y > 0 && x > 0 && getCell(x - 1, y - 1) != ' ') neighbors++; // upper-left
+	if (y > 0 && getCell(x, y - 1) != ' ') neighbors++; // upper-center
+	if (y > 0 && x < width && getCell(x + 1, y - 1) != ' ') neighbors++; // upper-right
+	if (x > 0 && getCell(x - 1, y) != ' ') neighbors++; // middle-left
+	if (x < width && getCell(x + 1, y) != ' ') neighbors++; // middle-right
+	if (y < height && x > 0 && getCell(x - 1, y + 1) != ' ') neighbors++; // lower-left
+	if (y < height && getCell(x, y + 1) != ' ') neighbors++; // lower-center
+	if (y < height && x < width && getCell(x + 1, y + 1) != ' ') neighbors++; // lower-right
 
 	return neighbors;
+}
+
+char Map::getCell(int x, int y)
+{
+	if (x < 0) x = width - 1;
+	if (x > width - 1) x = 0;
+	if (y < 0) y = height - 1;
+	if (y > height - 1) y = 0;
+	
+	return cells[y][x];
 }
