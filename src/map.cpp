@@ -88,14 +88,14 @@ int Map::getLiveNeighbors(int x, int y)
 {
 	int neighbors = 0;
 
-	if (y > 0 && x > 0 && getCell(x - 1, y - 1) != ' ') neighbors++; // upper-left
-	if (y > 0 && getCell(x, y - 1) != ' ') neighbors++; // upper-center
-	if (y > 0 && x < width && getCell(x + 1, y - 1) != ' ') neighbors++; // upper-right
-	if (x > 0 && getCell(x - 1, y) != ' ') neighbors++; // middle-left
-	if (x < width && getCell(x + 1, y) != ' ') neighbors++; // middle-right
-	if (y < height && x > 0 && getCell(x - 1, y + 1) != ' ') neighbors++; // lower-left
-	if (y < height && getCell(x, y + 1) != ' ') neighbors++; // lower-center
-	if (y < height && x < width && getCell(x + 1, y + 1) != ' ') neighbors++; // lower-right
+	if (getCell(x - 1, y - 1) != ' ') neighbors++; // upper-left
+	if (getCell(x, y - 1) != ' ') neighbors++; // upper-center
+	if (getCell(x + 1, y - 1) != ' ') neighbors++; // upper-right
+	if (getCell(x - 1, y) != ' ') neighbors++; // middle-left
+	if (getCell(x + 1, y) != ' ') neighbors++; // middle-right
+	if (getCell(x - 1, y + 1) != ' ') neighbors++; // lower-left
+	if (getCell(x, y + 1) != ' ') neighbors++; // lower-center
+	if (getCell(x + 1, y + 1) != ' ') neighbors++; // lower-right
 
 	return neighbors;
 }

@@ -4,11 +4,11 @@
 
 int main(int argc, char *argv[])
 {
-	int WIDTH = 1000;
-	int HEIGHT = 1000;
+	int WIDTH = 222;
+	int HEIGHT = 63;
 	int CONSOLE_WIDTH = 222;
 	int CONSOLE_HEIGHT = 63;
-	int DENSITY = 1;
+	int DENSITY = 4;
 	char YOUNG_CELL = 'O';
 	char OLD_CELL = 'O';
 	
